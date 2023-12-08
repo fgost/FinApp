@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - include:
+      file: db/migration/01-create_table_users.sql
+  - include:
+      file: db/migration/02-create_table_profiles.sql
+  - include:
+      file: db/migration/03-create-revision-tables.sql
+  - include:
+      file: db/migration/04-create_table_access_groups.sql
+  - include:
+      file: db/migration/06-create_table_budgets.sql
+  - include:
+      file: db/migration/05-create_table_expenses.sql
+#  - include:
+#      file: db/migration/08-create_table_parts.sql
+#  - include:
+#      file: db/initialize/initialize_expense.sql
+#  - include:
+#      file: db/initialize/initialize_part.sql

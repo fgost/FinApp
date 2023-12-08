@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: finApp-java-api
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/db-finApp-api-java
+    user: user-finApp-api-java
+    password: pass-finApp-api-java
+    default-schema: public
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db-finApp-api-java
+    username: user-finApp-api-java
+    password: pass-finApp-api-java
+    driver: org.postgresql.Driver
+    default-schema: public
