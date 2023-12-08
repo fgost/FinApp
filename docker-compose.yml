@@ -1,0 +1,35 @@
+version: '3.9'
+services:
+  finApp-api-java-postgres:
+    image: postgres
+    container_name: finApp-api-java-database
+    environment:
+      POSTGRES_DB: db-finApp-api-java
+      POSTGRES_USER: user-finApp-api-java
+      POSTGRES_PASSWORD: pass-finApp-api-java
+    restart: always
+    platform: linux/amd64
+    ports:
+      - "5432:5432"
+
+  finApp-api-java-pgadmin:
+    image: dpage/pgadmin4
+    container_name: finApp-api-java-pgadmin
+    platform: linux/amd64
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin.finApp-api-java@dsw.net"
+      PGADMIN_DEFAULT_PASSWORD: "AdmfinApp@2023"
+    ports:
+      - "16545:80"
+    depends_on:
+      - finApp-api-java-postgres
+
+#  finApp-api-java-api:
+#    container_name: finApp-api-java-api
+#    build: .
+#    restart: always
+#    platform: linux/amd64
+#    ports:
+#      - "8084:5001"
+#    depends_on:
+#      - finApp-api-java-postgres
