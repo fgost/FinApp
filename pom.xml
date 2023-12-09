@@ -17,6 +17,11 @@
 		<java.version>19</java.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<!--JWT -->
 		<dependency>
 			<groupId>com.auth0</groupId>

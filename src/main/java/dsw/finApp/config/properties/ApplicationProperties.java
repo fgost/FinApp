@@ -33,5 +33,7 @@ public class ApplicationProperties {
         public static class Local {
             private String root;
         }
+
+
     }
 }
