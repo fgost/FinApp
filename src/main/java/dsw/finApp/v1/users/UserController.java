@@ -94,8 +94,8 @@ public class UserController {
         }
     }
 
-    @PostMapping
-    public ResponseEntity<UserResponseSummary> insert(
+    @PostMapping("/create")
+    public ResponseEntity<UserResponseSummary> create(
             @Valid @RequestBody UserRequest usersRequest,
             HttpServletResponse response) {
 
