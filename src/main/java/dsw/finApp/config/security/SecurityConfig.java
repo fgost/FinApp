@@ -38,7 +38,7 @@ public class SecurityConfig {
                 .and()
                 .csrf().disable()
                 .authorizeHttpRequests(
-                        (authorize) -> authorize.requestMatchers("/finApp/v1/authentication/**", "/**")
+                        (authorize) -> authorize.requestMatchers("/finApp/v1/authentication/**", "/finApp/v1/users/create")
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated()
