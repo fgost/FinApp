@@ -176,11 +176,13 @@ public class UserService {
     @Transactional
     public UserEntity updateExpense(String code, Set<OnlyCodeDto> inputList) {
         var entity = findByCode(code);
-        entity.getExpense().clear();
+
+        // Adiciona novas despesas ao invés de limpar e adicionar
         inputList.forEach(input -> {
             var expense = expenseService.findByCode(input.getCode());
             entity.getExpense().add(expense);
         });
+
         return repository.save(entity);
     }
 

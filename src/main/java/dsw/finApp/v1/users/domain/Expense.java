@@ -20,5 +20,8 @@ public class Expense {
     private String expensePrice;
 
     @NotBlank
+    private String expenseType;
+
+    @NotBlank
     private String code;
 }

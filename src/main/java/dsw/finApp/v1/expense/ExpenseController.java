@@ -69,6 +69,13 @@ public class ExpenseController {
         return ResponseEntity.noContent().build();
     }
 
+    @DeleteMapping("/del/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable(name = "id") String code) {
+        expenseFacade.deleteById(code);
+        return ResponseEntity.noContent().build();
+    }
+
+
     private URI getURIFor(String code) {
         return ServletUriComponentsBuilder
                 .fromCurrentRequestUri()

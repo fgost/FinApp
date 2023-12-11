@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS expenses (
     code character varying(36) not null,
     expense_name character varying(100) NOT NULL,
     expense_price double precision NOT NULL,
+    expense_type character varying(100) NOT NULL,
 
     CONSTRAINT pk_expenses PRIMARY KEY(id)
 );

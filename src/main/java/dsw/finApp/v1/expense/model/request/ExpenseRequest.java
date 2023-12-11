@@ -18,4 +18,9 @@ public class ExpenseRequest {
 
     @ApiModelProperty(value = "Expense Price", required = true, dataType = "java.lang.Double")
     private double expensePrice;
+
+    @ApiModelProperty(value = "expense type", required = true, dataType = "java.lang.String")
+    @NotBlank(message = "{expense.type.not.null}")
+    @Size(max = 100, message = "{expense.type.max.size}")
+    private String expenseType;
 }

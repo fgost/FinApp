@@ -25,6 +25,7 @@ public interface UserResponseMapper {
 
 
     @Mapping(target = "fullName", expression = "java(entity.getNomeCompleto())")
+    @Mapping(target = "expense.expenseType", expression = "java(entity.getExpense().getExpenseType())")
     UserResponseExpense mapEntityToExpense(UserEntity entity);
 
     UserResponsePermissionWrapper mapEntityToPermission(UserEntity entity);

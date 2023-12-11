@@ -39,7 +39,7 @@ public class ExpenseFacade {
     public ExpenseResponse insert(ExpenseRequest input) {
         var entity = ExpenseRequestMapper.INSTANCE.mapModelToEntity(input);
         var savedEntity = expenseService.insert(entity);
-        var dto = ExpenseResponseMapper.INSTANCE.mapEntityToResponse(savedEntity);
+        var dto = ExpenseResponseMapper.INSTANCE.mapEntityToExpenseResponse(savedEntity);
         return dto;
     }
 
@@ -52,5 +52,9 @@ public class ExpenseFacade {
 
     public void deleteByCode(String code) {
         expenseService.deleteByCode(code);
+    }
+
+    public void deleteById(String code) {
+        expenseService.deleteById(code);
     }
 }
