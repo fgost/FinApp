@@ -26,8 +26,8 @@ public class ExpenseEntity implements Serializable {
     private String code;
     private String expenseName;
     private Double expensePrice;
-//    private ExpenseTypeEnum expenseType;
-//    private ExpenseCategoryEnum expenseCategory;
+    private String expenseType;
+    //private ExpenseCategoryEnum expenseCategory;
 
     @PrePersist
     private void setCode() {

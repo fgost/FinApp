@@ -14,5 +14,6 @@ public interface ExpenseRequestMapper {
     @Mapping(target = "code", ignore = true)
     @Mapping(target = "expenseName")
     @Mapping(target = "expensePrice")
+    @Mapping(target = "expenseType")
     ExpenseEntity mapModelToEntity(ExpenseRequest request);
 }

@@ -59,6 +59,7 @@ public class ExpenseService {
         existentEntity.setCode(code);
         existentEntity.setExpenseName(expenseEntity.getExpenseName());
         existentEntity.setExpensePrice(expenseEntity.getExpensePrice());
+        existentEntity.setExpenseType(expenseEntity.getExpenseType());
         var dto = existentEntity;
         try {
             return repository.save(dto);
@@ -72,6 +73,17 @@ public class ExpenseService {
         try{
             var entity = findByCode(code);
             repository.delete(entity);
+        }catch (Exception e) {
+            throw ExceptionUtils.buildNotPersistedException(Constants.EXPENSE_DELETION_ERROR);
+        }
+    }
+
+    @Transactional
+    public void deleteById(String code) {
+        try{
+            var expense = findByCode(code);
+            Long id = expense.getId();
+            repository.deleteAssociationByExpenseId(id);
         }catch (Exception e) {
             throw ExceptionUtils.buildNotPersistedException(Constants.EXPENSE_DELETION_ERROR);
         }

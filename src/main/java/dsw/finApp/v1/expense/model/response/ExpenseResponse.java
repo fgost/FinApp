@@ -10,8 +10,10 @@ import lombok.*;
 @AllArgsConstructor
 public class ExpenseResponse {
     private String code;
-    @JsonProperty(value = "Name")
+    @JsonProperty(value = "name")
     private String expenseName;
-    @JsonProperty(value = "Price")
+    @JsonProperty(value = "price")
     private String expensePrice;
+    @JsonProperty(value = "type")
+    private String expenseType;
 }
